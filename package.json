@@ -1,5 +1,5 @@
 {
-  "name": "Tired nerds events",
+  "name": "tirednerds-events",
   "type": "module",
   "version": "0.0.1",
   "license": "MIT",
@@ -11,8 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.9.1",
     "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.9.1",
+    "astro-icon": "^1.1.0",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }
 }
