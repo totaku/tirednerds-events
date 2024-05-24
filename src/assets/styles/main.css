@@ -1,0 +1,74 @@
+@import 'normalize.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: .8rem;
+}
+
+body {
+    @apply bg-bunker-950 text-white font-rubik;
+}
+
+.container {
+    width: min(100% - 1rem, 960px);
+    margin-inline: auto;
+}
+
+.post h2 {
+    @apply text-2xl font-semibold mb-4;
+}
+
+.post h3 {
+    @apply text-xl font-semibold mb-4;
+}
+
+.main p {
+    @apply mb-4;
+}
+
+ol {
+    @apply list-inside list-decimal mb-4;
+}
+
+.goty ol {
+    @apply list-inside list-decimal mb-0;
+}
+
+ul {
+    @apply list-inside list-disc mb-4;
+}
+
+a {
+    border-bottom: 1px solid #e37435;
+    font-weight: 500;
+}
+
+ol :has(li > a:hover),
+ol :has(li > a:focus) {
+    @apply text-white bg-orange-500;
+    text-decoration: none;
+    -webkit-transition: all .3s cubic-bezier(.79, .4, .32, 1.84);
+    -o-transition: all .3s cubic-bezier(.79, .4, .32, 1.84);
+    transition: all .3s cubic-bezier(.79, .4, .32, 1.84);
+}
+
+summary {
+    @apply my-2 bg-bunker-950 inline-block py-1 px-2 rounded-md cursor-pointer;
+}
+
+iframe,
+object,
+embed {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.yt {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 1rem;
+}
