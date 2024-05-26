@@ -8,14 +8,14 @@ const { time, notime, name, img, description, twitch, twitch_hide, youtube, yout
         <div class="events-img md:shrink-0">
             <img class="h-48 w-full object-cover md:h-full md:w-[22rem]" src={img} alt={name} loading="lazy">
         </div>
-        <div class="p-4 min-h-60">
+        <div class="p-4 md:min-h-60">
             <h2 class="text-2xl pb-2" id={name}>{name}</h2>
             <div>{description}</div>
             <div class="flex py-2">
                 <Icon name="lets-icons:date-range-fill" class="text-xl mr-2" />
                 <div class="timestamp">{time ? time : notime}</div>
             </div>
-            <div class="hidden sm:flex place-items-center content-center">
+            <div class="flex place-items-center content-center">
                 <div class={youtube_hide}>
                     <a class="hover:text-orange-500" href={youtube} target="_blank" title="Смотреть на YouTube"><Icon name="mdi:youtube" class="text-2xl mr-2" /></a>
                 </div>
