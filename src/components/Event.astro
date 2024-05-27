@@ -24,7 +24,11 @@ const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLAT
             <img class="h-48 w-full object-cover md:h-full md:w-[22rem]" src={img} alt={name} loading="lazy">
         </div>
         <div class="p-4 md:min-h-60">
-            <h2 class="text-2xl pb-2" id={name}>{name}</h2>
+            <h2 class="text-2xl pb-2 link-container" id={name}>
+                <a href={`#${name}`}>
+                    {name}
+                </a>
+            </h2>
             <div>{description}</div>
             <div class="flex py-2">
                 <Icon name="lets-icons:date-range-fill" class="text-xl mr-2" />
