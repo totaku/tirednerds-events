@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import moment from "moment-timezone";
 const { time, name, img, description, twitch, youtube } = Astro.props;
 
-function formatDateToRFC3339(dateStr) {
+function formatDateToRFC3339(dateStr: moment.MomentInput) {
     const date = moment(dateStr);
     if (!date.isValid()) {
         console.error("Invalid date: " + dateStr);
