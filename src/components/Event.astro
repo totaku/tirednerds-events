@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-const { time, name, img, description, twitch, youtube } = Astro.props;
+const { time, name, img, description, twitch, youtube, nerds } = Astro.props;
 ---
 
 <div class="bg-bunker-900 rounded-xl shadow-md overflow-hidden">
@@ -29,6 +29,12 @@ const { time, name, img, description, twitch, youtube } = Astro.props;
                     <a class="hover:text-orange-500" href={twitch} target="_blank" title="Смотреть на Twitch">
                         <Icon name="mdi:twitch" class="text-2xl mr-2" />
                     </a>
+                )}
+            </div>
+            <div class="flex place-items-center content-center pt-2">
+                {nerds &&(
+                    <Icon name="mdi:gamepad-variant" class="text-2xl mr-2"/>
+                    <a class="hover:text-orange-500" href={nerds}>Что показали на {name}</a>
                 )}
             </div>
         </div>

@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+---
+<div id="user-timezone" class="pt-2 text-sm text-gray-500"></div>
+
+<script is:inline>
+    var userTimezoneElement = document.getElementById("user-timezone");
+    var userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // Определение смещения относительно UTC в минутах и преобразование в часы
+    var timezoneOffset = new Date().getTimezoneOffset();
+    var offsetHours = Math.floor(Math.abs(timezoneOffset) / 60);
+    var offsetMinutes = Math.abs(timezoneOffset) % 60;
+    var offsetSign = timezoneOffset <= 0 ? "+" : "-";
+
+    // Форматирование смещения в строку
+    var formattedOffset = `UTC${offsetSign}${offsetHours}:${offsetMinutes.toString().padStart(2, '0')}`;
+
+    userTimezoneElement.innerHTML = `Время проведения мероприятий указанно в часосом поясе: ${userTimezone}, ${formattedOffset}`;
+</script>
