@@ -42,10 +42,10 @@ ul {
     @apply list-inside list-disc mb-4;
 }
 
-/* a {
+.footer a {
     border-bottom: 1px solid #e37435;
     font-weight: 500;
-} */
+}
 
 ol :has(li > a:hover),
 ol :has(li > a:focus) {
