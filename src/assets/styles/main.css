@@ -42,7 +42,7 @@ ul {
     @apply list-inside list-disc mb-4;
 }
 
-.footer a {
+a {
     border-bottom: 1px solid #e37435;
     font-weight: 500;
 }

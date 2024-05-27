@@ -10,7 +10,7 @@ const { time, name, img, description, twitch, youtube, nerds } = Astro.props;
         </div>
         <div class="p-4 md:min-h-60">
             <h2 class="text-2xl pb-2 link-container hover:text-orange-500" id={name}>
-                <a href={`#${name}`}>
+                <a class="border-b-0 font-semibold" href={`#${name}`}>
                     {name}
                 </a>
             </h2>
@@ -21,12 +21,12 @@ const { time, name, img, description, twitch, youtube, nerds } = Astro.props;
             </div>
             <div class="flex place-items-center content-center">
                 {youtube &&(
-                    <a class="hover:text-orange-500" href={youtube} target="_blank" title="Смотреть на YouTube">
+                    <a class="hover:text-orange-500 border-b-0" href={youtube} target="_blank" title="Смотреть на YouTube">
                         <Icon name="mdi:youtube" class="text-2xl mr-2" />
                     </a>
                 )}
                 {twitch && (
-                    <a class="hover:text-orange-500" href={twitch} target="_blank" title="Смотреть на Twitch">
+                    <a class="hover:text-orange-500 border-b-0" href={twitch} target="_blank" title="Смотреть на Twitch">
                         <Icon name="mdi:twitch" class="text-2xl mr-2" />
                     </a>
                 )}
