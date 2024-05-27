@@ -1,21 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import moment from "moment-timezone";
 const { time, name, img, description, twitch, youtube } = Astro.props;
-
-function formatDateToRFC3339(dateStr: moment.MomentInput) {
-    const date = moment(dateStr);
-    if (!date.isValid()) {
-        console.error("Invalid date: " + dateStr);
-        return "";
-    }
-    return date.utc().format("YYYYMMDDTHHmmss") + "Z";
-}
-
-const startTime = formatDateToRFC3339(time);
-const endTime = formatDateToRFC3339(moment(time).add(1, 'hours'));
-
-const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(name)}&dates=${startTime}/${endTime}&details=${encodeURIComponent(description)}&sf=true&output=xml`;
 ---
 
 <div class="bg-bunker-900 rounded-xl shadow-md overflow-hidden">
@@ -24,7 +9,7 @@ const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLAT
             <img class="h-48 w-full object-cover md:h-full md:w-[22rem]" src={img} alt={name} loading="lazy">
         </div>
         <div class="p-4 md:min-h-60">
-            <h2 class="text-2xl pb-2 link-container" id={name}>
+            <h2 class="text-2xl pb-2 link-container hover:text-orange-500" id={name}>
                 <a href={`#${name}`}>
                     {name}
                 </a>
@@ -33,12 +18,6 @@ const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLAT
             <div class="flex py-2">
                 <Icon name="lets-icons:date-range-fill" class="text-xl mr-2" />
                 <div class="timestamp">{time}</div>
-            </div>
-            <div class="flex place-items-center content-center pb-2">
-                <Icon name="mdi:calendar-plus" class="text-xl mr-2" />
-                <a href={googleCalendarUrl} target="_blank" class="hover:text-orange-500" title="Добавить в Google Календарь">
-                    Добавить в Google Календарь
-                </a>
             </div>
             <div class="flex place-items-center content-center">
                 {youtube &&(
