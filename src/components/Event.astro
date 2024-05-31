@@ -15,10 +15,12 @@ const { time, name, img, description, twitch, youtube, nerds } = Astro.props;
                 </a>
             </h2>
             <div>{description}</div>
-            <div class="flex py-2">
-                <Icon name="lets-icons:date-range-fill" class="text-xl mr-2" />
-                <div class="timestamp">{time}</div>
-            </div>
+            {time &&(
+                <div class="flex py-2">
+                    <Icon name="lets-icons:date-range-fill" class="text-xl mr-2" />
+                    <div class="timestamp">{time}</div>
+                </div>
+            )}
             <div class="flex place-items-center content-center">
                 {youtube &&(
                     <a class="hover:text-orange-500 border-b-0" href={youtube} target="_blank" title="Смотреть на YouTube">
@@ -34,7 +36,7 @@ const { time, name, img, description, twitch, youtube, nerds } = Astro.props;
             <div class="flex place-items-center content-center pt-2">
                 {nerds &&(
                     <Icon name="mdi:gamepad-variant" class="text-2xl mr-2"/>
-                    <a class="hover:text-orange-500" href={nerds}>Что показали на {name}</a>
+                    <a class="hover:text-orange-500 border-b-0" href={nerds}>Что показали на {name}</a>
                 )}
             </div>
         </div>
